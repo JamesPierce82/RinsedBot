@@ -131,13 +131,16 @@ client.on('message', message => {
 client.on("presenceUpdate", function(oldPresence, newPresence) {
     
     // Get the current date
-    var d1 = new Date();
-    console.log(d1);
+    //var d1 = new Date();
+    //console.log(d1);
     
 //*** Setting Reminder
     // enter command
     // bot writes date to file along with message (without overwriting existing reminders)
     // file is saved to server(local)
+    // bot unloads all existing file data from memory
+        // This is so that the next time the bot checks, it will reload all the information in the file
+        // specically, the data it would be missing is the latest reminder
     
     
 //*** Outputting Reminder
