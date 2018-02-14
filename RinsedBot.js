@@ -33,9 +33,10 @@ client.on('ready', () => {
     
     // Notify users on server of Bot Connect
     // Find the testing server
+//    var debugGuild = client.guilds.find('name', 'MAD Club');
     var debugGuild = client.guilds.find('name', 'Bot-Testing');
     // Find the debug channel
-    var debugChannel = debugGuild.channels.find('name', 'debug');
+    var debugChannel = debugGuild.channels.find('name', 'bot-testing');
     debugChannel.send("Just got back from a Slurp!");
     
     console.log("messages until next JarrodNoise: " + restartCount);
@@ -68,8 +69,8 @@ client.on('message', message => {
         message.channel.send("President - James Pierce\nVice-President - Adam Bazzi\nSecretary - Kari Gignac\nTreasurer - Chris Dias");
     } else if(message.content.toLowerCase().startsWith("!help")) {
         message.channel.send("Here is a list of the available commands  :\n\n" + 
-                     //"**!schedule#** will display that years schedule (replace # with the number).\n\n" + 
-                     //"**!schedules** will display all three schedules.\n\n" +
+                     "**!schedule#** or **!s#** will display that years schedule (replace # with the number).\n\n" + 
+                     "**!schedules** or **!ss** will display all three schedules.\n\n" +
                      "**!execs** will display the list of club executives.\n\n" + 
                      "**!help** will display this list of available commands.");
     } else if(message.content.toLowerCase().startsWith("!schedule1") || message.content.toLowerCase().startsWith("!s1")) {
@@ -125,14 +126,49 @@ client.on('message', message => {
     
 });
 
-/* Working, but not needed */
-/*client.on("presenceUpdate", function(oldPresence, newPresence) {
+// Using this for reminders to prevent the need for constant date checks.
+// This way the bot will check whenever a users status changes, which will happen often enough to work.
+client.on("presenceUpdate", function(oldPresence, newPresence) {
+    
+    // Get the current date
+    var d1 = new Date();
+    console.log(d1);
+    
+//*** Setting Reminder
+    // enter command
+    // bot writes date to file along with message (without overwriting existing reminders)
+    // file is saved to server(local)
     
     
-	console.log(oldPresence.user.username + " was " + oldPresence.presence.status);
-	console.log(newPresence.user.username + " is " + newPresence.presence.status + "\n");
+//*** Outputting Reminder
+    // check to see if file data has already been loaded
+        // if file data has not been loaded
+            // read date from file
+        // otherwise
+            // do not read file data again
+    // presenceUpdate event occurs when users status changes(online -> offline, online -> away, etc)
+    // this method will check if it is currently after noon. If it is
+        // it will
+            // compare date against current date
+            // if date difference is less than 1, 
+            // output a reminder to the server
+            // set a variable to indicate reminders have been triggered for today(variable 'afternoon')
+        // otherwise it will
+            // set the variable for 'afternoon' to false
+            // nothing else
     
-});*/
+    // This means reminders will trigger at or after 12PM(noon) on the day the reminder is set for.
+    // The potential to add time exists, however that would increase the complexity of the command required to set reminders.
+    // The goal is to keep this as simple as possible for the time being.
+    
+    
+    
+    
+    // Only needed if we want to see who's status changed, however this is not really necessary.
+	//console.log(oldPresence.user.username + " was " + oldPresence.presence.status);
+	//console.log(newPresence.user.username + " is " + newPresence.presence.status + "\n");
+    
+});
 
 
 // Respond to the bot disconnecting
