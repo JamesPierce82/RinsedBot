@@ -1,10 +1,35 @@
 # RinsedBot
 A bot for the MAD Club Discord.
 
-Download or Clone the repo to your local computer. You will need to have node installed, as well as NPM.
+# Setup
 
-Once you have NPM, Node, and the repo downloaded, you will need to run the following command in node:
-'''npm install discord.js node-opus --save'''
-This will install the proper modules.
+## Pre-requisites
 
-The conf.js file is where you will store your token. In the case of the MAD Club token, the bots token will be stored on the server that is hosting it.
+- Node
+- NPM
+
+### MacOS
+
+**Homebrew:** (Recommended)
+
+Use Homebrew to install by doing:
+
+- `brew install node`
+
+Then verify using `node -v` to verify your version is there and `npm -v`.
+
+**MacOS Installer:**
+
+You can also use this if you like:
+
+https://nodejs.org/en/download/
+
+
+### Linux/Ubuntu
+
+- If you're using this, you should install nodejs from one of the linux package managers. In this case `apt-get install`.
+
+## Installation
+
+- Fork the repo to your computer. To do this, click on the `fork` button on the top-right hand corner.
+- Go to your directory, and open up terminal. Type in `npm install`. This should install all the dependicies you need for this project.

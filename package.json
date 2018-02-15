@@ -1,0 +1,27 @@
+{
+  "name": "rinsedbot",
+  "version": "1.0.0",
+  "description": "A Discord bot to manage our server",
+  "main": "RinsedBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAD-Club/RinsedBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "MAD Club",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MAD-Club/RinsedBot/issues"
+  },
+  "homepage": "https://github.com/MAD-Club/RinsedBot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "node-opus": "^0.2.7"
+  }
+}
